@@ -1,5 +1,8 @@
 package com.dataStructure.binarysearchtree.demo;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree 
 {
 	Node root;
@@ -74,6 +77,28 @@ public class BinarySearchTree
 		}
 		return false;	 
 	}
+	public static void levelOrder(Node root)
+	{
+		if(root!=null)
+		{
+			Queue<Node> queue=new LinkedList<Node>();
+			Node current=null;
+			queue.offer(root);
+			while(!queue.isEmpty())
+			{
+				current=queue.poll();
+				System.out.print(" "+current.data);
+				if(current.left!=null)
+				{
+					queue.offer(current.left);
+				}
+				if(current.right!=null)
+				{
+					queue.offer(current.right);
+				}
+			}
+		}
+	}
 	public static void main(String[] args) 
 	{
 		BinarySearchTree obj=new BinarySearchTree(10);
@@ -98,7 +123,7 @@ public class BinarySearchTree
 		{
 			System.out.println("data not found");
 	}*/
-		
+		levelOrder(obj.root);
 	}
 }
 
