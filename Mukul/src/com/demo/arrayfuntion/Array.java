@@ -100,10 +100,7 @@ public class Array
 		return true;
 	}
 	
-	static int[] sort()
-	{
-		
-	}
+	
 	public static void main(String[] args)
 	{
 		

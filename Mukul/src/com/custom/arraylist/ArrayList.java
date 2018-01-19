@@ -100,10 +100,30 @@ public class ArrayList<E>
 	{
 		if(e==null)
 		{
-			for(int i=size-1;i>0;) {
-		}}
+			for(int i=size-1;i>0;i--) 
+			{
+				if(element[i]==null)
+				{
+					return i;
+				}
+			}
+		}
+			else
+			{
+				for(int i=size-1;i>0;i--) 
+				{
+					if(e.equals(element[i]))
+					{
+						return i;
+					}
+				}
+			}
+		return -1;
 	}
+		
+	
 	public static void main(String[] args) 
+	{
 	
 	ArrayList<Integer> obj=new ArrayList<Integer>();
 	obj.add(10);

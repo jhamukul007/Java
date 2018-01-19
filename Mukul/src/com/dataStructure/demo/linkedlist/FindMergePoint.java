@@ -47,7 +47,7 @@ public class FindMergePoint
 			dif=len2-len1;
 		}
 		
-		for(i=dif;i<len1)
+		return -1;
 	}
 	
 	public static void main(String[] args) 

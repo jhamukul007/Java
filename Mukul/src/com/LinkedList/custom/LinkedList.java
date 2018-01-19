@@ -2,10 +2,10 @@ package com.LinkedList.custom;
 
 public class LinkedList
 {
-	public Node<T> first;
+	public Node first;
 	
 	public LinkedList()
 	{
-		first=null;
+	
 	}
 }
