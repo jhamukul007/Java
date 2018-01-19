@@ -100,6 +100,29 @@ public class BinarySearchTree
 			
 		}
 	}
+	
+	public static Node insert(Node root,int data)
+	{
+		
+		Node n=new Node(data);
+		if(data<root.data)
+		{
+			if(root.left==null)
+			{
+				root.left=n;
+			}
+			insert(root.left,data);
+		}
+		if(data>root.data)
+		{
+			if(root.right==null)
+			{
+				root.right=n;
+			}
+			insert(root.right, data);
+		}
+		return root;
+	}
 	public static void main(String[] args) 
 	{
 		BinarySearchTree obj=new BinarySearchTree(10);
@@ -124,7 +147,8 @@ public class BinarySearchTree
 		{
 			System.out.println("data not found");
 	}*/
-		levelOrder(obj.root);
+		Node n=insert(obj.root,4);
+		levelOrder(n);
 	}
 }
 
