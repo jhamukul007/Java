@@ -1,5 +1,6 @@
 package com.designpattern.demo.factorymethod;
 
-public class Bank {
-
+public interface Bank
+{
+	int rate();
 }

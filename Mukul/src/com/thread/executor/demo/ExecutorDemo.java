@@ -34,6 +34,7 @@ public class ExecutorDemo
 		}
 		
 		executor.shutdown();
+		System.out.println("Thread ended");
 	}
 	
 }
