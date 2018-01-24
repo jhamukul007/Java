@@ -1,5 +1,7 @@
 package com.dataStructure.demo.linkedlist;
 
+import java.awt.HeadlessException;
+
 public class FindMergePoint 
 {
 	Node head;
@@ -50,6 +52,118 @@ public class FindMergePoint
 		return -1;
 	}
 	
+	public static int nthNode(Node head, int n)
+	{
+		int len=length(head);
+		if(head==null || n>len)
+		{
+			return -1;
+		}
+		
+		
+		int count=1;
+		while(head!=null)
+		{
+			if(n==count)
+			{
+				return head.data;
+			}
+			count++;
+			head=head.next;
+		}
+		return -1;
+	}
+	
+	public static int length(Node head)
+	{
+		
+		int count=1;
+		
+		while(head!=null)
+		{
+			count++;
+			head=head.next;
+		}
+		
+		return count;
+	}
+	
+	public static int mid(Node head)
+	{
+		if(head==null)
+		{
+			return -1;
+		}
+		
+		Node fast=head;
+		Node slow=head;
+		
+		while(fast!=null && fast.next!=null)
+		{
+			slow=slow.next;
+			fast=fast.next.next;
+		}
+		return slow.data;
+	}
+	
+	public static int get(Node head)
+	{
+		if(head==null)
+		{
+			return -1;
+		}
+		int len=length(head);
+		System.out.println(len);
+		/*if(n>len || n<0)
+		{
+			return -1;
+	}*/
+		
+		
+		
+		for(int i=1;i<len;i++)
+		{
+			if(i==len-2)
+			{
+				return head.data;
+			}
+			head=head.next;
+		}
+		return -1;
+		
+	}
+	
+	/*public Node merge(Node head1, Node head2)
+	{
+		if(head1==null && head2==null)
+		{
+			return null;
+		}
+		else if(head1==null && head2!=null)
+		{
+			return head2;
+		}
+		else if(head1!=null && head2==null)
+		{
+			return head1;
+		}
+		
+		else if(head1!=null && head2!=null)
+		{
+			boolean b=true;
+			int len=length(head1);
+			for(int i=1;i<=len+1;i++)
+			{
+				if(i==len+1)
+				{
+					
+				}
+			}
+		}
+		
+		
+	}*/
+	
 	public static void main(String[] args) 
 	{
 		FindMergePoint obj=new FindMergePoint();
@@ -62,9 +176,23 @@ public class FindMergePoint
 		sec.next=thr;
 		Node four=new Node(5);
 		sec.next=four;
+		Node five =new Node(6);
+		four.next=five;
+		
+		Node six =new Node(7);
+		five.next=six;
+		
+		Node seven =new Node(8);
+		six.next=seven;
+		
+		System.out.println(length(obj.head));
 		
 		
 		
+		//System.out.println(mid(obj.head));
+		//System.out.println(nthNode(obj.head,2));
+		
+		//System.out.println(get(obj.head));
 		FindMergePoint obj1=new FindMergePoint();
 		obj1.head=new Node(9);
 		Node one1=new Node(8);
@@ -76,7 +204,7 @@ public class FindMergePoint
 		Node four1=new Node(10);
 		sec1.next=four1;
 		
-		
+	
 	}
 	
 }
