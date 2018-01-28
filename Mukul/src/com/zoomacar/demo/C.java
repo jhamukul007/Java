@@ -7,7 +7,9 @@ public class C implements A,B
 		A a=new C();
 		System.out.println(a.i);
 		
-		B b=(B)a;
+		/*B b=(B)a;
+		System.out.println(b.i);*/
+		B b=new B();
 		System.out.println(b.i);
 	}
 }
@@ -19,7 +21,8 @@ interface A
 
 interface B
 {
-	String i="jkfhjd";
+	//int i=20;
+	//String i="jkfhjd";
 }
 
 
